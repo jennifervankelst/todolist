@@ -1,0 +1,39 @@
+body 
+{
+    padding-left: 650px;
+    padding-right: 650px;
+    background: #2EDBC9;
+}
+fieldset 
+{
+    border: 2px solid #2BEDCB;
+    width: 500px;
+    height: 150px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #A0CFCD;
+    border-radius: 20px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    overflow: auto;
+}
+/*.afaire 
+{
+    overflow: auto;
+}
+.archive 
+{
+    overflow: auto; 
+}
+*/
+.task 
+{
+    height: 200px;    
+}
+p
+{
+    color: #1190E8;
+}
+
+
+
+
