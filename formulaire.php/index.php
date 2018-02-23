@@ -165,73 +165,75 @@ error_reporting(E_ALL);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
     <title>To-do list</title>
   </head>
   <body>
-    <fieldset class="afaire">
-      <form action="index.php" method="POST">
-        <h5>
-          A FAIRE
-        </h5>
-        <div class="dropper">
-          <div class="essai">
-        
-            <?php afficheJSON(false); ?>
-
-          </div>
-
-        </div>
-        <input class="button" type="submit" name="ajouter" value="Fini">
-      </form>
-    </fieldset>
-    <fieldset class="archive">
-      <h5>
-        ARCHIVE
-      </h5>
-        <span class="barre">
+    <h1>TO DO LIST</h1>  
+      <fieldset class="afaire">
+        <form action="index.php" method="POST">
+          <h5>
+            A FAIRE
+          </h5>
           <div class="dropper">
             <div class="essai">
-
-              <?php afficheJSON(true); ?>
+          
+              <?php afficheJSON(false); ?>
 
             </div>
-          </div>
-        </span>
-    </fieldset>
-    <form method="POST" action="index.php">
-      <fieldset class="task">
-        <label for="tache">Ajouter une tâche</label>
-        <p><span>Liste des tâches a effectuer</span></p>
-        <input type="text" name="tache" value="">
-        <input class="button" type="submit" name="submit" value="Valider">
-      </fieldset>
-    </form>
-  <script>
-     (function() {
-        
-        var dndHandler = {
-            
-            draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
-            
-            applyDragEvents: function(element) {
-                
-                element.draggable = true;
 
-                var dndHandler = this; // Cette variable est nécessaire pour que l'événement "dragstart" ci-dessous accède facilement au namespace "dndHandler"
-                
-                element.addEventListener('dragstart', function(e) {
-                    dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
-                    e.dataTransfer.setData('text/plain', ''); // Nécessaire pour Firefox
-                }, false);
-                
-            },
-     
-            applyDropEvents: function(dropper) {
-                
-                dropper.addEventListener('dragover', function(e) {
-                    e.preventDefault(); // On autorise le drop d'éléments
-                    this.className = 'dropper drop_hover'; // Et on applique le design adéquat à notre zone de drop quand un élément la survole
-                }, false);
+          </div>
+          <input class="button" type="submit" name="ajouter" value="Fini">
+        </form>
+      </fieldset>
+      <fieldset class="archive">
+        <h5>
+          ARCHIVE
+        </h5>
+          <span class="barre">
+            <div class="dropper">
+              <div class="essai">
+
+                <?php afficheJSON(true); ?>
+
+              </div>
+            </div>
+          </span>
+      </fieldset>
+      <form method="POST" action="index.php">
+        <fieldset class="task">
+          <label for="tache">Ajouter une tâche</label>
+          <p><span>Liste des tâches a effectuer</span></p>
+          <input type="text" name="tache" value="">
+          <input class="button" type="submit" name="submit" value="Valider">
+        </fieldset>
+      </form>
+    <script>
+      (function() {
+          
+          var dndHandler = {
+              
+              draggedElement: null, // Propriété pointant vers l'élément en cours de déplacement
+              
+              applyDragEvents: function(element) {
+                  
+                  element.draggable = true;
+
+                  var dndHandler = this; // Cette variable est nécessaire pour que l'événement "dragstart" ci-dessous accède facilement au namespace "dndHandler"
+                  
+                  element.addEventListener('dragstart', function(e) {
+                      dndHandler.draggedElement = e.target; // On sauvegarde l'élément en cours de déplacement
+                      e.dataTransfer.setData('text/plain', ''); // Nécessaire pour Firefox
+                  }, false);
+                  
+              },
+      
+              applyDropEvents: function(dropper) {
+                  
+                  dropper.addEventListener('dragover', function(e) {
+                      e.preventDefault(); // On autorise le drop d'éléments
+                      this.className = 'dropper drop_hover'; // Et on applique le design adéquat à notre zone de drop quand un élément la survole
+                  }, false);
                 
                 dropper.addEventListener('dragleave', function() {
                     this.className = 'dropper'; // On revient au design de base lorsque l'élément quitte la zone de drop
