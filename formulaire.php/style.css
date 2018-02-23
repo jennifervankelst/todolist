@@ -16,15 +16,6 @@ fieldset
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     overflow: auto;
 }
-/*.afaire 
-{
-    overflow: auto;
-}
-.archive 
-{
-    overflow: auto; 
-}
-*/
 .task 
 {
     height: 200px;    
@@ -32,6 +23,10 @@ fieldset
 p
 {
     color: #1190E8;
+}
+.barre
+{
+    text-decoration: line-through;
 }
 
 
